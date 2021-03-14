@@ -1,12 +1,17 @@
 import { checkPropTypes } from "prop-types";
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./NavigationItem.css";
 
 const navigationItem = (props) => (
   <li className="Navigationitem">
-    <a className="Navigationitem.active" href={props.link}>
+    <NavLink
+      className="Navigationitem.active"
+      to={props.link}
+      exact={props.exact}
+    >
       {props.children}
-    </a>
+    </NavLink>
   </li>
 );
 
